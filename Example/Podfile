@@ -1,0 +1,15 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'ssssss_Example' do
+  #Podfile指向本地路径，根据本地路径找到podspec，再根据podspec里source_files所描述的路径导入目标内容。
+  
+  pod 'ssssss', :path => '../'
+
+  target 'ssssss_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
