@@ -11,6 +11,7 @@ open class FirstClass: NSObject {
     
     open static func ffffff() {
         print("FirstClass外部调用")
+        
     }
     
 }
