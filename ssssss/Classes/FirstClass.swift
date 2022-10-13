@@ -7,10 +7,10 @@
 
 import Foundation
 
-open class firstClass: NSObject {
+open class FirstClass: NSObject {
     
-    open class func ffffff() {
-        print("ffffffff")
+    open static func ffffff() {
+        print("FirstClass外部调用")
     }
     
 }

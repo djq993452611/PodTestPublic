@@ -7,10 +7,19 @@
 
 import Foundation
 
-class ThirdClass: NSObject {
+public class ThirdClass: NSObject {
     
-    class func ttttttt() {
-        print("ttttttt")
+    func lllllll(){
+        print("ThirdClass内部调用实例方法")
     }
+    
+    static func ttttttt() {
+        print("ThirdClass内部调用类方法")
+    }
+    
+    public static func hhhhhh() {
+        print("ThirdClass外部调用类方法")
+    }
+    
     
 }

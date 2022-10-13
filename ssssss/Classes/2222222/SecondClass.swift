@@ -7,10 +7,12 @@
 
 import Foundation
 
-class SecondClass: NSObject {
+public class SecondClass: NSObject {
     
-    class func mmmmmmm() {
-        print("mmmmmmm")
+    public static func mmmmmmm() {
+        print("SecondClass外部调用")
+        ThirdClass.ttttttt()
+        ThirdClass().lllllll()
     }
     
 }
