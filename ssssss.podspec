@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ssssss'
-  s.version          = '0.2.2'
+  s.version          = '0.2.3'
   s.summary          = 'A short description of ssssss.'
 
 # This description is used to generate tags and improve search results.
@@ -30,7 +30,7 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '10.0'
   
-  s.source_files = 'ssssss/Classes/**/*', "ssssss/kkkkkkk/*"
+  s.source_files = 'ssssss/Classes/**/*', "ssssss/nnClass/*"
   
   # s.resource_bundles = {
   #   'ssssss' => ['ssssss/Assets/*.png']
@@ -38,5 +38,8 @@ TODO: Add long description of the pod here.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'RxSwift', '~>5.0'
+  s.dependency 'RxCocoa', '~>5.0'
+  
 end

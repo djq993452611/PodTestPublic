@@ -8,18 +8,37 @@
 
 import UIKit
 import ssssss
+import RxSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    let firstOb = FirstClass()
+    let thirdOb = ThirdClass()
+    
+    private var disposeBag = DisposeBag()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        FirstClass.ffffff()
-        SecondClass.mmmmmmm()
-        ThirdClass.hhhhhh()
+        FirstClass.classMethod()
+        SecondClass.classMethod()
+        ThirdClass.classMethod()
+        
+        //主工程和ThirdClass互发通知
+        NotificationTool.observer(.rcOpenSuccess).subscribe(onNext: {  _ in
+            print("主工程监监听到ThirdClass发送通知")
+        }).disposed(by: disposeBag)
+        thirdOb.instanceMetood()
+        NotificationTool.post(.rcOpenFailed)
+        
+        //主工程和FourthClass互发通知，中间媒介FirstClass
+        NotificationTool.observer(.rcConnectSucceed).subscribe(onNext: {  _ in
+            print("主工程监听到FourthClass发送通知")
+        }).disposed(by: disposeBag)
+        firstOb.instanceMetood()
+        NotificationTool.post(.rcConnectFailed)
+        
         return true
     }
 

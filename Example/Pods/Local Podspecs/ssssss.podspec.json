@@ -1,9 +1,9 @@
 {
   "name": "ssssss",
-  "version": "0.1.0",
+  "version": "0.2.3",
   "summary": "A short description of ssssss.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/JianQi/ssssss",
+  "homepage": "https://github.com/djq993452611/PodTestPublic",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,14 +12,25 @@
     "JianQi": "jianqi@o1olife.com"
   },
   "source": {
-    "git": "https://github.com/JianQi/ssssss.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/djq993452611/PodTestPublic.git",
+    "tag": "0.2.3"
   },
   "platforms": {
     "ios": "10.0"
   },
   "source_files": [
     "ssssss/Classes/**/*",
-    "ssssss/kkkkkkk/*"
-  ]
+    "ssssss/nnClass/*"
+  ],
+  "dependencies": {
+    "AFNetworking": [
+      "~> 2.3"
+    ],
+    "RxSwift": [
+      "~>5.0"
+    ],
+    "RxCocoa": [
+      "~>5.0"
+    ]
+  }
 }
