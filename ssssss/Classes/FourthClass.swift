@@ -15,11 +15,13 @@ public class FourthClass: NSObject {
     
     func instanceMetood2() {
         print("FourthClass-内部调用实例方法")
+        
         //disposeBag在实例方法结束后自动释放，需要FourthClass实例对象初始化被持有
-        NotificationTool.observer(.rcConnectFailed).subscribe(onNext: {  _ in
+        NotificationTool.observer(.mainToFourthClass).subscribe(onNext: {  _ in
             print("FourthClass监听到主工程发送通知")
         }).disposed(by: disposeBag)
-        NotificationTool.post(.rcConnectSucceed)
+        
+        NotificationTool.post(.fourthClassToMain)
     }
 
 }

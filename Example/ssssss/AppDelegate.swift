@@ -21,23 +21,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        print(AppNotification.mainToThirdClass.rawValue)
+        print(BaseURL.home.rawValue)
+        
         FirstClass.classMethod()
         SecondClass.classMethod()
         ThirdClass.classMethod()
         
         //主工程和ThirdClass互发通知
-        NotificationTool.observer(.rcOpenSuccess).subscribe(onNext: {  _ in
+        NotificationTool.observer(.thirdClassToMain).subscribe(onNext: {  _ in
             print("主工程监监听到ThirdClass发送通知")
         }).disposed(by: disposeBag)
         thirdOb.instanceMetood()
-        NotificationTool.post(.rcOpenFailed)
+        NotificationTool.post(.mainToThirdClass)
         
         //主工程和FourthClass互发通知，中间媒介FirstClass
-        NotificationTool.observer(.rcConnectSucceed).subscribe(onNext: {  _ in
+        NotificationTool.observer(.fourthClassToMain).subscribe(onNext: {  _ in
             print("主工程监听到FourthClass发送通知")
         }).disposed(by: disposeBag)
         firstOb.instanceMetood()
-        NotificationTool.post(.rcConnectFailed)
+        NotificationTool.post(.mainToFourthClass)
         
         return true
     }

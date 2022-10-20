@@ -18,10 +18,12 @@ public class ThirdClass: NSObject {
     
     public func instanceMetood() {
         print("ThirdClass-外部调用实例方法")
-        NotificationTool.observer(.rcOpenFailed).subscribe(onNext: {  _ in
+        
+        NotificationTool.observer(.mainToThirdClass).subscribe(onNext: {  _ in
             print("ThirdClass监听到主工程发送通知")
         }).disposed(by: disposeBag)
-        NotificationTool.post(.rcOpenSuccess)
+        
+        NotificationTool.post(.thirdClassToMain)
     }
     
     static func classMethod2() {
